@@ -9,33 +9,39 @@ let numberList;
 buttonEl.addEventListener("click", function(){
     let listArray = [];
     let numeroEl = elementi.value;
+    let found = false;
     console.log(numeroEl);
-    let condition = false;
-    for(let i = 0; i < numeroEl; i++){
-        elemento = numeroEl[i];
-        if (elemento > 5){
-        condition = true;
-        console.log(condition);
+    if (!isNaN(parseInt(numeroEl))){
+        for(let i = 0; i < numeroEl; i++){
+            numberList = getRndInteger(0,100);
+            console.log(numberList);
+            listArray.push(numberList);
+            if (numeroEl > 5){
+                found = true;
+            }
         };
-        console.log(elemento);
-        numberList = getRndInteger(0,100);
-        console.log(numberList);
-        listArray.push(numberList);
-        console.log(listArray);
-    };
+        alertEl.innerHTML += `
+        <div class = "container">
+            ${listArray}
+        </div>
+        `;
+        alertEl.classList.remove("d-none");
+    } else {
+        alertEl.innerHTML += `
+        <div> Aggiungi testo </div>
+        `
+    }
     let lastNumber;
-    if(condition){
-        lastNumber = listArray.at(-2);
+    if(found){
+        lastNumber = "ciao"
     } else{
-        lastNumber = "Più corto di 5"
+        lastNumber = "più corto di 5"
     }
     alertEl.innerHTML += `
-    <div class = "container">
-        ${lastNumber}
-    </div>
-    `;
-    alertEl.classList.remove("d-none");
+    <div> Ultimi 5 numeri ${lastNumber} </div>
+    `
 });
+
 
 // let listEl = [];
 // let elements = "";
