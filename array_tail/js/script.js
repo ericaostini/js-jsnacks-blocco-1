@@ -5,6 +5,16 @@ function getRndInteger(min, max) {
 const elementi = document.getElementById("elementi");
 const buttonEl = document.querySelector("button");
 
+let numberList;
+buttonEl.addEventListener("click", function(){
+    let numeroEl = elementi.value;
+    console.log(numeroEl);
+    for(let i = 1; i < numeroEl; i++){
+        numberList = getRndInteger(0,100);
+        console.log(numberList);
+
+    }
+})
 
 // let listEl = [];
 // let elements = "";
