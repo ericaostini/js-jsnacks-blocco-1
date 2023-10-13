@@ -3,20 +3,38 @@ function getRndInteger(min, max) {
 };
 const wrapper = document.getElementById("wrapper");
 const elementi = document.getElementById("elementi");
-const buttonEl = document.querySelector("button");
-
+const buttonEl = document.querySelector(".btn-primary");
+const alertEl = document.querySelector(".alert");
 let numberList;
-let listArray = [];
 buttonEl.addEventListener("click", function(){
+    let listArray = [];
     let numeroEl = elementi.value;
     console.log(numeroEl);
+    let condition = false;
     for(let i = 0; i < numeroEl; i++){
+        elemento = numeroEl[i];
+        if (elemento > 5){
+        condition = true;
+        console.log(condition);
+        };
+        console.log(elemento);
         numberList = getRndInteger(0,100);
         console.log(numberList);
-        listArray.splice(0,0,numberList);
+        listArray.push(numberList);
         console.log(listArray);
     };
-    wrapper.innerHTML += listArray;
+    let lastNumber;
+    if(condition){
+        lastNumber = listArray.at(-2);
+    } else{
+        lastNumber = "Più corto di 5"
+    }
+    alertEl.innerHTML += `
+    <div class = "container">
+        ${lastNumber}
+    </div>
+    `;
+    alertEl.classList.remove("d-none");
 });
 
 // let listEl = [];
