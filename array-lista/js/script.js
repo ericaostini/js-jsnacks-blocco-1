@@ -5,7 +5,7 @@ const frigorifero = [
      'ciliegia',
      'arancia',
      'mandarino',
-     'cocomero', 
+    'cocomero', 
      'limone',
      'fragola'
 ]
@@ -15,17 +15,20 @@ frigorifero.push("pesca");
 console.log(frigorifero);
 
 //verificare se nell'array di frutta c'è il "cocomero"
-const alertText = document.querySelector(".alert");
-let textEl;
-let frutto;
+let alertText = document.querySelector(".alert");
+let cocomero = false;
 for(let i = 0; i < frigorifero.length -1; i++){
-    frutto = frigorifero[i];
+    let frutto = frigorifero[i];
     console.log(frutto);
     if (frutto === "cocomero"){
-        textEl = "Trovato! Devo solo preparare il cocktail."
-        console.log(textEl);
-    } else{
-        frutto += 1;
-    }
+        cocomero = true;
+        console.log(cocomero);
+    };
+};
+let textEl;
+if(cocomero){
+    textEl = "Trovato! Devo solo preparare il cocktail."
+} else{
+    textEl = "Oh no, devo uscire a comprare il cocomero!"
 }
 alertText.innerHTML = textEl;
