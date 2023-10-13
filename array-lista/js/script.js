@@ -9,4 +9,7 @@ const frigorifero = [
      'limone',
      'fragola'
 ]
+
+//Inserisco nell'array il valore "pesca"
+frigorifero.push("pesca");
 console.log(frigorifero);
