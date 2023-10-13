@@ -32,8 +32,15 @@ buttonEl.addEventListener("click", function(){
         `
     }
     let lastNumber;
+    let lastIndex = listArray.at(-1);
+    let SLast = listArray.at(-2);
+    let TLast = listArray.at(-3);
+    let FoLast = listArray.at(-4);
+    let FiLast = listArray.at(-5);
     if(found){
-        lastNumber = "ciao"
+        lastNumber = `
+        <div> ${lastIndex} ${SLast} ${TLast} ${FoLast} ${FiLast} </div>
+        `
     } else{
         lastNumber = "più corto di 5"
     }
