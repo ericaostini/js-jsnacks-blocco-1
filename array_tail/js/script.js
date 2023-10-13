@@ -1,7 +1,7 @@
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 };
-
+const wrapper = document.getElementById("wrapper");
 const elementi = document.getElementById("elementi");
 const buttonEl = document.querySelector("button");
 
@@ -15,9 +15,9 @@ buttonEl.addEventListener("click", function(){
         console.log(numberList);
         listArray.splice(0,0,numberList);
         console.log(listArray);
-    }
-
-})
+    };
+    wrapper.innerHTML += listArray;
+});
 
 // let listEl = [];
 // let elements = "";
