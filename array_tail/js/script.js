@@ -5,6 +5,8 @@ const wrapper = document.getElementById("wrapper");
 const elementi = document.getElementById("elementi");
 const buttonEl = document.querySelector(".btn-primary");
 const alertEl = document.querySelector(".alert");
+const elArray = document.getElementById("array");
+const buttonArray = document.querySelector(".btn-danger")
 let numberList;
 buttonEl.addEventListener("click", function(){
     let listArray = [];
@@ -49,6 +51,20 @@ buttonEl.addEventListener("click", function(){
     `
 });
 
+let firstIndex = 0;
+let visualE;
+buttonArray.addEventListener("click", function(){
+    let arrayNum = elArray.value;
+    console.log(arrayNum);
+    if (!isNaN(parseInt(elArray))){
+        for (let x = 0; x < elArray; x++){
+            firstIndex += -1;
+            console.log(listArray[-1]);
+            const visualE = listArray[listArray.lenght -1];
+            console.log(visualE);
+        }
+    }
+})
 
 // let listEl = [];
 // let elements = "";
